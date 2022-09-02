@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Калькулятор счётчика воды</string>
+    <string name="result_string">%1$s смн</string>
+</resources>

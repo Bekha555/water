@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OOCalcInput2">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="70dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="171dp"
+        android:layout_marginBottom="555dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_calc_icon" />
+
+    <ImageView
+        android:id="@+id/ootext"
+        android:layout_width="287dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="53dp"
+        android:src="@drawable/calc_input_text2"
+        app:layout_constraintEnd_toEndOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="@+id/icon"
+        app:layout_constraintTop_toBottomOf="@+id/icon" />
+
+    <EditText
+        android:id="@+id/ooeditT"
+        android:layout_width="165dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="250dp"
+        android:background="@drawable/input"
+        android:ems="10"
+        android:fontFamily="@font/rubik_light"
+        android:hint="-  -  -  -"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ootext"
+        app:layout_constraintStart_toStartOf="@+id/ootext"
+        app:layout_constraintTop_toBottomOf="@+id/ootext" />
+
+    <Button
+        android:id="@+id/ok2"
+        android:layout_width="287dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="133dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="81dp"
+        android:background="@drawable/blue_button"
+        android:fontFamily="@font/rubik_light"
+        android:text="Посчитать"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ootext2" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="305dp"
+        android:background="@drawable/back_button"
+        android:stateListAnimator="@null"
+        android:text="←"
+        android:textAlignment="center"
+        android:textColor="@color/mainbg"
+        android:textSize="45sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/ootext2"
+        android:layout_width="155dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/ooeditT"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="@+id/ooeditT"
+        app:layout_constraintTop_toBottomOf="@+id/ooeditT"
+        app:srcCompat="@drawable/ic_red_number" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

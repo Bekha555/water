@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".BudCalcInput">
+
+            <ImageView
+                android:id="@+id/budicon"
+                android:layout_width="70dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="170dp"
+                android:layout_marginTop="86dp"
+                android:layout_marginEnd="171dp"
+                android:layout_marginBottom="555dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_calc_icon" />
+
+            <ImageView
+                android:id="@+id/budtext"
+                android:layout_width="287dp"
+                android:layout_height="106dp"
+                android:layout_marginTop="53dp"
+                app:layout_constraintEnd_toEndOf="@+id/budicon"
+                app:layout_constraintStart_toStartOf="@+id/budicon"
+                app:layout_constraintTop_toBottomOf="@+id/budicon"
+                android:src="@drawable/calc_input_text1" />
+
+            <EditText
+                android:id="@+id/budeditT"
+                android:layout_width="165dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="57dp"
+                android:layout_marginBottom="250dp"
+                android:background="@drawable/input"
+                android:ems="10"
+                android:fontFamily="@font/rubik_light"
+                android:hint="- - - -"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/budtext"
+                app:layout_constraintStart_toStartOf="@+id/budtext"
+                app:layout_constraintTop_toBottomOf="@+id/budtext" />
+
+            <Button
+                android:id="@+id/budOk"
+                android:layout_width="287dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="133dp"
+                android:layout_marginEnd="62dp"
+                android:layout_marginBottom="81dp"
+                android:background="@drawable/blue_button"
+                android:fontFamily="@font/rubik_light"
+                android:text="Далее"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/budtext2" />
+
+            <ImageView
+                android:id="@+id/budtext2"
+                android:layout_width="155dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/budeditT"
+                app:layout_constraintHorizontal_bias="0.54"
+                app:layout_constraintStart_toStartOf="@+id/budeditT"
+                app:layout_constraintTop_toBottomOf="@+id/budeditT"
+                app:srcCompat="@drawable/ic_red_number" />
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="68dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="-10dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginEnd="305dp"
+                android:background="@drawable/back_button"
+                android:stateListAnimator="@null"
+                android:text="←"
+                android:textAlignment="center"
+                android:textColor="@color/mainbg"
+                android:textSize="45sp"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

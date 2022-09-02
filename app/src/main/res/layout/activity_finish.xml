@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Finish">
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="70dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="171dp"
+        android:layout_marginBottom="555dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_finish" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="227dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/imageView21"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageView21"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21"
+        app:srcCompat="@drawable/ic_result" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="311dp"
+        android:layout_height="332dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="50dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView22"
+        app:layout_constraintStart_toStartOf="@+id/imageView22"
+        app:layout_constraintTop_toBottomOf="@+id/imageView22"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardview_style">
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="274dp"
+                android:layout_height="77dp"
+                android:layout_below="@+id/textView7"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="130dp"
+                android:text="Что-то пошло не так"
+                android:textAlignment="center"
+                android:textColor="#222"
+                android:visibility="visible"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="60dp"
+                android:layout_height="26dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="225dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="70dp"
+                android:layout_toEndOf="@+id/textView9"
+                android:text="СМН"
+                android:textAlignment="textStart"
+                android:textColor="#222"
+                android:visibility="visible"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="257dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="50dp"
+                android:text="Вы перешли в раздел:"
+                android:textAlignment="center"
+                android:textColor="#222"
+                android:textSize="16sp"
+                android:visibility="visible"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="103dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+
+                android:layout_marginTop="218dp"
+                android:layout_marginBottom="70dp"
+                android:layout_toEndOf="@+id/textView5"
+                android:fontFamily="@font/rubik_light"
+                android:hint="- - - -"
+                android:textAlignment="center"
+                android:textColor="#222"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="25sp"
+                android:visibility="visible"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="212dp"
+                android:layout_marginBottom="70dp"
+                android:text="К оплате:"
+                android:textAlignment="center"
+                android:textColor="#222"
+                android:textSize="25sp"
+                android:visibility="visible"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/imageView25"
+                android:layout_width="244dp"
+                android:layout_height="16dp"
+                android:layout_alignStart="@+id/textView5"
+                android:layout_alignEnd="@+id/textView3"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="65dp"
+                app:srcCompat="@drawable/long_line" />
+
+            <Button
+                android:id="@+id/button19"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="275dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/chek_button"
+                android:stateListAnimator="@null"
+                android:text="Сохранить квитанцию"
+                android:textAlignment="center"
+                android:textColor="@drawable/change_text_color"
+                android:textSize="12sp"
+                app:backgroundTint="@null"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="287dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/blue_button"
+        android:fontFamily="@font/rubik_light"
+        android:text="Спасибо!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/card_view"
+        app:layout_constraintStart_toStartOf="@+id/card_view"
+        app:layout_constraintTop_toBottomOf="@+id/card_view" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="305dp"
+        android:background="@drawable/back_button"
+        android:stateListAnimator="@null"
+        android:text="←"
+        android:textAlignment="center"
+        android:textColor="@color/mainbg"
+        android:textSize="45sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,267 @@
+package com.example.beta1
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.beta1.utils.SessionManager
+
+
+class Finish : AppCompatActivity() {
+
+    private lateinit var sessionManager: SessionManager
+
+    val obshBlago: String by lazy {
+        intent.extras?.get("obshBlago").toString()
+    }
+    val result: String by lazy {
+        intent.extras?.get("result").toString()
+    }
+    val gosBud: String by lazy {
+        intent.extras?.get("gosBud").toString()
+    }
+    val gosNeBudHavBez: String by lazy {
+        intent.extras?.get("gosNeBudHavBez").toString()
+    }
+    val gosNeBudHavs: String by lazy {
+        intent.extras?.get("gosNeBudHavs").toString()
+    }
+    val gosNeBudmnogs: String by lazy {
+        intent.extras?.get("gosNeBudmnogs").toString()
+    }
+    val gosNeBudmnogbez: String by lazy {
+        intent.extras?.get("gosNeBudmnogbez").toString()
+    }
+    val gosNeBudmnogvishs: String by lazy {
+        intent.extras?.get("gosNeBudmnogvishs").toString()
+    }
+    val gosNeBudmnogvishbez: String by lazy {
+        intent.extras?.get("gosNeBudmnogvishbez").toString()
+    }
+    val yurHavBez: String by lazy {
+        intent.extras?.get("yurHavBez").toString()
+    }
+    val yourmnogbez: String by lazy {
+        intent.extras?.get("yourmnogbez").toString()
+    }
+
+    val yurmnogVishBez: String by lazy {
+        intent.extras?.get("yurmnogVishBez").toString()
+    }
+
+    val yurhavs: String by lazy {
+        intent.extras?.get("yurhavs").toString()
+    }
+
+    val yurmnogs: String by lazy {
+        intent.extras?.get("yurmnogs").toString()
+    }
+
+    val yurmnogVishs: String by lazy {
+        intent.extras?.get("yurmnogVishs").toString()
+    }
+
+    val fizHavBez: String by lazy {
+        intent.extras?.get("fizHavBez").toString()
+    }
+
+    val fizmnogbez: String by lazy {
+        intent.extras?.get("fizmnogbez").toString()
+    }
+
+    val fizmnogVishBez: String by lazy {
+        intent.extras?.get("fizmnogVishBez").toString()
+    }
+
+    val fizhavs: String by lazy {
+        intent.extras?.get("fizhavs").toString()
+    }
+
+    val fizmnogs: String by lazy {
+        intent.extras?.get("fizmnogs").toString()
+    }
+
+
+    private lateinit var textView: TextView
+    private lateinit var textView2: TextView
+    private lateinit var button: Button
+
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_finish)
+        sessionManager = SessionManager(this)
+
+        button = findViewById(R.id.back_button)
+
+
+        button.setOnClickListener {
+            //   val intent = Intent (this, MainActivity::class.java)
+            onBackPressed ()
+        }
+
+        button = findViewById(R.id.button17)
+        button.setOnClickListener {
+            val intent = Intent (this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+                         //Получение Данных
+        //Благотворительная организация
+        val sum2 = intent.getStringExtra("Extra").toString()
+
+
+
+        //Количество людей
+        val sumpeop = intent.getStringExtra("ExtraP").toString()
+        val havpeop = intent.getStringExtra("havExtra").toString()
+
+
+        //Обычная ОО
+        val OOmessageOne = intent.getStringExtra("OOExtraOne").toString()
+
+        val obshObOO: String by lazy {
+            intent.extras?.get("obshObOO").toString()
+        }
+
+
+        //Бьюджетная организация
+        val budmessageOne = intent.getStringExtra("BudExtraOne").toString()
+
+
+        //       val sharedPref = getSharedPreferences("key",Context.MODE_PRIVATE)
+
+
+        val textView = findViewById<TextView>(R.id.textView9)
+        val textView2 = findViewById<TextView>(R.id.textView2)
+
+
+
+            //Вычисления Благотворительная орг
+            if (intent.getStringExtra("Extra").toString() != "null") {
+                textView.text = sum2.toString()
+
+                //
+
+            }
+        button = findViewById(R.id.button19)
+        button.setOnClickListener() {
+            sessionManager.paycheckNumber = textView.text.toString()
+            Log.e("TAG", "PAYCHECK:" + sessionManager.paycheckNumber)
+            Toast.makeText(this, "Сохранено", Toast.LENGTH_SHORT).show()
+        }
+
+        //Вывод Обычное ОО
+        if (intent.getStringExtra("OOExtraOne").toString() != "null") {
+            textView.text = OOmessageOne.toString()
+        }
+
+        if (intent.getStringExtra("BudExtraOne").toString() != "null") {
+            textView.text = budmessageOne.toString()
+        }
+
+        //Многоэтажки без счётчика
+        if (intent.getStringExtra("ExtraP").toString() != "null") {
+          textView.text = sumpeop.toString()
+        }
+        // Хавли без счётчика
+
+        if (intent.getStringExtra("havExtra").toString() != "null") {
+            textView.text = havpeop.toString()
+        }
+
+
+
+        if (intent.extras?.get("obshBlago").toString() != "null") {
+            textView2.text = obshBlago.toString()
+        }
+
+        if (intent.extras?.get("obshObOO").toString() != "null") {
+            textView2.text = obshObOO
+        }
+
+        if (intent.extras?.get("gosBud").toString() != "null") {
+            textView2.text = gosBud
+        }
+
+        if (intent.extras?.get("gosNeBudHavBez").toString() != "null") {
+            textView2.text = gosNeBudHavBez
+        }
+
+        if (intent.extras?.get("gosNeBudHavs").toString() != "null") {
+            textView2.text = gosNeBudHavs
+        }
+
+        if (intent.extras?.get("gosNeBudmnogs").toString() != "null") {
+            textView2.text = gosNeBudmnogs
+        }
+
+        if (intent.extras?.get("gosNeBudmnogbez").toString() != "null") {
+            textView2.text = gosNeBudmnogbez
+        }
+
+        if (intent.extras?.get("gosNeBudmnogvishs").toString() != "null") {
+            textView2.text = gosNeBudmnogvishs
+        }
+
+        if (intent.extras?.get("gosNeBudmnogvishbez").toString() != "null") {
+            textView2.text = gosNeBudmnogvishbez
+        }
+
+        if (intent.extras?.get("yurHavBez").toString() != "null") {
+            textView2.text = yurHavBez
+        }
+
+        if (intent.extras?.get("yourmnogbez").toString() != "null") {
+            textView2.text = yourmnogbez
+        }
+
+        if (intent.extras?.get("yurmnogVishBez").toString() != "null") {
+            textView2.text = yurmnogVishBez
+        }
+
+        if (intent.extras?.get("yurhavs").toString() != "null") {
+            textView2.text = yurhavs
+        }
+
+        if (intent.extras?.get("yurmnogs").toString() != "null") {
+            textView2.text = yurmnogs
+        }
+
+        if (intent.extras?.get("yurmnogVishs").toString() != "null") {
+            textView2.text = yurmnogVishs
+        }
+
+        if (intent.extras?.get("fizHavBez").toString() != "null") {
+            textView2.text = fizHavBez
+        }
+
+        if (intent.extras?.get("fizmnogbez").toString() != "null") {
+            textView2.text = fizmnogbez
+        }
+
+        if (intent.extras?.get("fizmnogVishBez").toString() != "null") {
+            textView2.text = fizmnogVishBez
+        }
+
+        if (intent.extras?.get("fizhavs").toString() != "null") {
+            textView2.text = fizhavs
+        }
+
+        if (intent.extras?.get("fizmnogs").toString() != "null") {
+            textView2.text = fizmnogs
+        }
+
+
+        /*val name = sharedPref.getString("name","default value").toString()
+        Toast.makeText(this, name, Toast.LENGTH_SHORT).show()
+        textView.text = (name).toString()*/
+
+    }
+}
+
