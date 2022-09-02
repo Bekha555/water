@@ -67,7 +67,7 @@
                 android:layout_height="30dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="80dp"
+                android:layout_marginStart="70dp"
 
                 android:layout_marginTop="140dp"
                 android:layout_marginBottom="68dp"
@@ -89,7 +89,7 @@
                 android:layout_alignEnd="@+id/textView3"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="70dp"
-                android:layout_marginEnd="-8dp"
+                android:layout_marginEnd="0dp"
                 android:layout_marginBottom="58dp"
                 app:srcCompat="@drawable/long_line" />
 
@@ -117,10 +117,8 @@
 
     <Button
         android:id="@+id/back_button"
-        android:layout_width="68dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="-10dp"
-        android:layout_marginTop="-20dp"
+        android:layout_width="65dp"
+        android:layout_height="69dp"
         android:layout_marginEnd="305dp"
         android:background="@drawable/back_button"
         android:stateListAnimator="@null"
@@ -140,7 +138,7 @@
         android:layout_width="226dp"
         android:layout_height="34dp"
         android:layout_marginBottom="20dp"
-        android:text="Предыдущий счёт"
+        android:text="Предыдущий счет"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
