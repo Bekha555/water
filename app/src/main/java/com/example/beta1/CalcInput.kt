@@ -85,23 +85,25 @@ class CalcInput : AppCompatActivity() {
 button.setOnClickListener(View.OnClickListener {
     editText = findViewById(R.id.editTextNumber3)
     val message = editText.text.toString()
+    if (message.trim().isNotEmpty()) {
 
 
+        val intent = android.content.Intent(this, CalcInput2::class.java)
+        intent.putExtra("Extra", message)
+        intent.putExtra("obshBlago", obshBlago)
+        intent.putExtra("gosNeBudHavs", gosNeBudHavs)
+        intent.putExtra("gosNeBudmnogs", gosNeBudmnogs)
+        intent.putExtra("gosNeBudmnogvishs", gosNeBudmnogvishs)
+        intent.putExtra("yurhavs", yurhavs)
+        intent.putExtra("yurmnogs", yurmnogs)
+        intent.putExtra("yurmnogVishs", yurmnogVishs)
+        intent.putExtra("fizhavs", fizhavs)
+        intent.putExtra("fizmnogs", fizmnogs)
+        intent.putExtra("fizmnogVishs", fizmnogVishs)
 
-    val intent = android.content.Intent(this, CalcInput2::class.java)
-    intent.putExtra("Extra", message)
-    intent.putExtra("obshBlago", obshBlago)
-    intent.putExtra("gosNeBudHavs", gosNeBudHavs)
-    intent.putExtra("gosNeBudmnogs", gosNeBudmnogs)
-    intent.putExtra("gosNeBudmnogvishs", gosNeBudmnogvishs)
-    intent.putExtra("yurhavs",yurhavs)
-    intent.putExtra("yurmnogs",yurmnogs)
-    intent.putExtra("yurmnogVishs",yurmnogVishs)
-    intent.putExtra("fizhavs",fizhavs)
-    intent.putExtra("fizmnogs",fizmnogs)
-    intent.putExtra("fizmnogVishs",fizmnogVishs)
-
-    startActivity(intent)
+        startActivity(intent)
+    }
+    else{return@OnClickListener}
 })
 
 

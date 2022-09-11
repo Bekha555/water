@@ -68,7 +68,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="70dp"
-
                 android:layout_marginTop="140dp"
                 android:layout_marginBottom="68dp"
                 android:layout_toEndOf="@+id/textView5"
