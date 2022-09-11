@@ -102,8 +102,14 @@ button.setOnClickListener(View.OnClickListener {
         intent.putExtra("fizmnogVishs", fizmnogVishs)
 
         startActivity(intent)
+
     }
-    else{return@OnClickListener}
+
+    else{
+        Toast.makeText(this, "Поле не долно быть пустым", Toast.LENGTH_SHORT).show()
+
+        return@OnClickListener
+    }
 })
 
 

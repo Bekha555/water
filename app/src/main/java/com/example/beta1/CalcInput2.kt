@@ -65,14 +65,17 @@ class CalcInput2 : AppCompatActivity() {
             //   Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
             editText = findViewById(R.id.editTextNumber3)
+
             val messageOne = editText.text.toString()
+            if (messageOne.trim().isNotEmpty()) {
+
 
                 val sum = message.toInt() - messageOne.toInt()
 
             val sum2 = (sum * 2.34).toString()
 
             if (sum < 0) {
-                Toast.makeText(this, "Вы ввели неверные значения", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Эти показатели должны быть меньше", Toast.LENGTH_SHORT).show()
 
                 return@setOnClickListener
             }
@@ -92,7 +95,12 @@ class CalcInput2 : AppCompatActivity() {
             intent.putExtra("fizmnogVishs", fizmnogVishs)
 
             startActivity(intent)
+            }
+            else {
+                Toast.makeText(this, "Поле не долно быть пустым", Toast.LENGTH_SHORT).show()
 
+                return@setOnClickListener
+            }
         }
     }
 
