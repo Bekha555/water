@@ -35,13 +35,13 @@ class BudCalcInput2 : AppCompatActivity() {
 
             editText = findViewById(R.id.budeditT)
             val budmessageOne = editText.text.toString()
-
+            if (budmessageOne.trim().isNotEmpty()) {
 
 
             val sum = budmessage.toInt() - budmessageOne.toInt()
             val sum2 = (sum * 2.66).toString()
             if (sum < 0) {
-                Toast.makeText(this, "Вы ввели неверные значения", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Эти показатели должны быть меньше", Toast.LENGTH_SHORT).show()
 
 
 
@@ -54,8 +54,12 @@ class BudCalcInput2 : AppCompatActivity() {
             intent.putExtra("gosBud",gosBud)
 
             startActivity(intent)
+            }
+            else{
+                Toast.makeText(this, "Поле не долно быть пустым", Toast.LENGTH_SHORT).show()
 
-
+                return@setOnClickListener
+            }
         }
     }
 }

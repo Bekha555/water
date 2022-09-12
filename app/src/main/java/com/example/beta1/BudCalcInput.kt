@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class BudCalcInput : AppCompatActivity() {
     private lateinit var button: Button
@@ -34,14 +35,20 @@ class BudCalcInput : AppCompatActivity() {
     private fun callActivity() {
         editText = findViewById(R.id.budeditT)
         val Budmessage = editText.text.toString()
-
-        val intent = android.content.Intent(this, BudCalcInput2::class.java)
-        intent.putExtra("BudExtra", Budmessage)
-        intent.putExtra("gosBud",gosBud)
-
-        startActivity(intent)
+        if (Budmessage.trim().isNotEmpty()) {
 
 
+            val intent = android.content.Intent(this, BudCalcInput2::class.java)
+            intent.putExtra("BudExtra", Budmessage)
+            intent.putExtra("gosBud", gosBud)
+
+            startActivity(intent)
+        }
+        else{
+            Toast.makeText(this, "Поле не долно быть пустым", Toast.LENGTH_SHORT).show()
+
+            return@callActivity
+        }
 
     }
 }

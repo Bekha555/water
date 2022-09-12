@@ -21,37 +21,6 @@ class Finish : AppCompatActivity() {
         intent.extras?.get("result").toString()
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     val gosBud: String by lazy {
         intent.extras?.get("gosBud").toString()
     }
@@ -122,8 +91,6 @@ class Finish : AppCompatActivity() {
     private lateinit var button: Button
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
@@ -134,19 +101,18 @@ class Finish : AppCompatActivity() {
 
         button.setOnClickListener {
             //   val intent = Intent (this, MainActivity::class.java)
-            onBackPressed ()
+            onBackPressed()
         }
 
         button = findViewById(R.id.button17)
         button.setOnClickListener {
-            val intent = Intent (this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-                         //Получение Данных
+        //Получение Данных
         //Благотворительная организация
         val sum2 = intent.getStringExtra("Extra").toString()
-
 
 
         //Количество людей
@@ -173,14 +139,13 @@ class Finish : AppCompatActivity() {
         val textView2 = findViewById<TextView>(R.id.textView2)
 
 
+        //Вычисления Благотворительная орг
+        if (intent.getStringExtra("Extra").toString() != "null") {
+            textView.text = sum2.toString()
 
-            //Вычисления Благотворительная орг
-            if (intent.getStringExtra("Extra").toString() != "null") {
-                textView.text = sum2.toString()
+            //
 
-                //
-
-            }
+        }
         button = findViewById(R.id.button19)
         button.setOnClickListener() {
             sessionManager.paycheckNumber = textView.text.toString()
@@ -199,7 +164,7 @@ class Finish : AppCompatActivity() {
 
         //Многоэтажки без счётчика
         if (intent.getStringExtra("ExtraP").toString() != "null") {
-          textView.text = sumpeop.toString()
+            textView.text = sumpeop.toString()
         }
         // Хавли без счётчика
 

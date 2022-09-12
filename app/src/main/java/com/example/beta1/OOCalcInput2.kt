@@ -36,12 +36,12 @@ class OOCalcInput2 : AppCompatActivity() {
 
             editText = findViewById(R.id.ooeditT)
             val OOmessageOne = editText.text.toString()
-
+            if (OOmessageOne.trim().isNotEmpty()) {
 
             val sum = OOmessage.toInt() - OOmessageOne.toInt()
             val sum2 = (sum * 6.70).toString()
             if (sum < 0) {
-                Toast.makeText(this, "Вы ввели неверные значения", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Эти показатели должны быть меньше", Toast.LENGTH_SHORT).show()
 
 
 
@@ -55,7 +55,12 @@ class OOCalcInput2 : AppCompatActivity() {
             intent.putExtra("OOExtraOne", sum2)
             intent.putExtra("obshObOO", obshObOO)
             startActivity(intent)
+            }
+            else{
+                Toast.makeText(this, "Поле не долно быть пустым", Toast.LENGTH_SHORT).show()
 
+                return@setOnClickListener
+            }
 
         }
     }

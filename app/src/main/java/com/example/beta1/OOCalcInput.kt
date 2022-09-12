@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class OOCalcInput : AppCompatActivity() {
     private lateinit var button: Button
@@ -39,15 +40,22 @@ class OOCalcInput : AppCompatActivity() {
         }
 
         button.setOnClickListener (View.OnClickListener{
-  editText = findViewById(R.id.editT)
+         editText = findViewById(R.id.editT)
             val OOmessage = editText.text.toString()
+            if (OOmessage.trim().isNotEmpty()) {
 
-            val intent = android.content.Intent(this, OOCalcInput2::class.java)
-            intent.putExtra("OOExtra", OOmessage)
-            val obshObOO = ("${obshText} -> ${obOO}")
-            intent.putExtra("obshObOO", obshObOO)
-            startActivity(intent)
+                val intent = android.content.Intent(this, OOCalcInput2::class.java)
+                intent.putExtra("OOExtra", OOmessage)
+                val obshObOO = ("${obshText} -> ${obOO}")
+                intent.putExtra("obshObOO", obshObOO)
+                startActivity(intent)
+            }
+            else{
 
+                Toast.makeText(this, "Поле не долно быть пустым", Toast.LENGTH_SHORT).show()
+
+                return@OnClickListener
+            }
         })
     }
 }
