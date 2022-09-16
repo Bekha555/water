@@ -2,17 +2,23 @@ package com.example.beta1
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import com.example.beta1.utils.SessionManager
+import kotlinx.android.synthetic.main.activity_finish.*
+import kotlinx.android.synthetic.main.item_layout.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class Finish : AppCompatActivity() {
 
     private lateinit var sessionManager: SessionManager
+    private lateinit var database: WaterDataBase
 
     val obshBlago: String by lazy {
         intent.extras?.get("obshBlago").toString()
@@ -94,6 +100,9 @@ class Finish : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
+        database = Room.databaseBuilder(
+            applicationContext, WaterDataBase::class.java, "To_Do"
+        ).build()
         sessionManager = SessionManager(this)
 
         button = findViewById(R.id.back_button)
@@ -148,8 +157,17 @@ class Finish : AppCompatActivity() {
         }
         button = findViewById(R.id.button19)
         button.setOnClickListener() {
-            sessionManager.paycheckNumber = textView.text.toString()
-            Log.e("TAG", "PAYCHECK:" + sessionManager.paycheckNumber)
+            //sessionManager.paycheckNumber = textView.text.toString()
+            // Log.e("TAG", "PAYCHECK:" + sessionManager.paycheckNumber)
+            //DataObject.(id, create_title.text.toString())
+            val title = textView9.text.toString() + "смн"
+            DataObject.setData(title = title)
+            CoroutineScope(Dispatchers.IO).launch {
+                database.waterDao().insertTask(
+                    Water(title = title)
+                )
+            }
+
             Toast.makeText(this, "Сохранено", Toast.LENGTH_SHORT).show()
         }
 
