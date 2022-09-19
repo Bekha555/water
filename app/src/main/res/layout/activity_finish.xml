@@ -115,12 +115,12 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="1dp"
-
                 android:layout_marginTop="218dp"
                 android:layout_marginBottom="70dp"
                 android:layout_toEndOf="@+id/textView5"
                 android:fontFamily="@font/rubik_light"
                 android:hint="- - - -"
+                android:maxLength="5"
                 android:textAlignment="center"
                 android:textColor="#222"
                 android:textColorHint="@android:color/darker_gray"

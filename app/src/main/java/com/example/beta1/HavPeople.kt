@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class HavPeople : AppCompatActivity() {
     val gosNeBudHavBez: String by lazy {
@@ -38,24 +39,23 @@ class HavPeople : AppCompatActivity() {
         editText = findViewById(R.id.havEditText)
 
         button.setOnClickListener {
-            callActivity()
-        }
-    }
-        private fun callActivity() {
+
             editText = findViewById(R.id.havEditText)
             val havNumber = editText.text.toString()
-            val havpeop = ((havNumber).toInt() * 4.94).toString()
-            val intent = android.content.Intent(this, Finish::class.java)
-            intent.putExtra("havExtra", havpeop)
-            intent.putExtra("gosNeBudHavBez", gosNeBudHavBez)
-            intent.putExtra("yurHavBez",yurHavBez)
-            intent.putExtra("fizHavBez",fizHavBez)
-            startActivity(intent)
+            if (havNumber.trim().isNotEmpty()) {
+                val havpeop = ((havNumber).toInt() * 4.94).toString()
+                val intent = android.content.Intent(this, Finish::class.java)
+                intent.putExtra("havExtra", havpeop)
+                intent.putExtra("gosNeBudHavBez", gosNeBudHavBez)
+                intent.putExtra("yurHavBez", yurHavBez)
+                intent.putExtra("fizHavBez", fizHavBez)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Поле не должно быть пустым", Toast.LENGTH_SHORT).show()
 
+                return@setOnClickListener
 
-
-
-
-
+            }
+        }
         }
     }

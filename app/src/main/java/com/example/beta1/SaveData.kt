@@ -9,6 +9,9 @@ import android.widget.TextView
 import androidx.room.Room
 import com.example.beta1.utils.SessionManager
 import kotlinx.android.synthetic.main.activity_save_data.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class SaveData : AppCompatActivity() {
@@ -22,14 +25,29 @@ class SaveData : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_save_data)
+
+        val clearButton = findViewById<Button>(R.id.button21)
         database = Room.databaseBuilder(
-            applicationContext, WaterDataBase::class.java, "water"
+            applicationContext, WaterDataBase::class.java, "Water"
         ).build()
         button = findViewById(R.id.back_button)
-        sessionManager = SessionManager(this)
+        //  sessionManager = SessionManager(this)
 
 
-        recycle.adapter = rvAdapter(DataObject.getAllData())
+        database.waterDao().getAllData().observe(this) { dataList ->
+            recycle.adapter = rvAdapter(dataList)
+        }
+
+
+
+        clearButton.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+
+                database.waterDao().clearData()
+
+            }
+        }
+
         //sessionManager = SessionManager(this)
 
 
@@ -38,7 +56,7 @@ class SaveData : AppCompatActivity() {
 
         //get
         //sessionManager.paycheckNumber
-            //textView = findViewById(R.id.textView9)
+        //textView = findViewById(R.id.textView9)
         //textView.text = sessionManager.paycheckNumber
 
 

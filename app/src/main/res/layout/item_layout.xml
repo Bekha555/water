@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50sp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/item_view">
+
+        <TextView
+            android:id="@+id/saved_check"
+            android:layout_width="128dp"
+            android:layout_height="30sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5sp"
+            android:backgroundTint="@null"
+            android:gravity="center"
+            android:hint="Пусто"
+            android:textAlignment="center"
+            android:textColor="#ffff"
+            android:textSize="25sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="5sp"
+            android:backgroundTint="@null"
+            android:gravity="bottom"
+            android:hint="Пусто"
+            android:textAlignment="center"
+            android:textColor="#ffff"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+    </RelativeLayout>
+</FrameLayout>

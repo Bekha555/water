@@ -52,7 +52,7 @@ class OOCalcInput : AppCompatActivity() {
             }
             else{
 
-                Toast.makeText(this, "Поле не долно быть пустым", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Поле не должно быть пустым", Toast.LENGTH_SHORT).show()
 
                 return@OnClickListener
             }

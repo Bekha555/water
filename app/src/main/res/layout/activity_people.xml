@@ -63,7 +63,7 @@
         android:background="@drawable/input"
         android:ems="10"
         android:hint="Количество"
-        android:maxLength="5"
+        android:maxLength="2"
 
         android:inputType="number"
         android:textAlignment="center"

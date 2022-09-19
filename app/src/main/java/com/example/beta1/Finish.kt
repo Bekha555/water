@@ -13,9 +13,12 @@ import kotlinx.android.synthetic.main.item_layout.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class Finish : AppCompatActivity() {
+
 
     private lateinit var sessionManager: SessionManager
     private lateinit var database: WaterDataBase
@@ -83,6 +86,10 @@ class Finish : AppCompatActivity() {
         intent.extras?.get("fizmnogVishBez").toString()
     }
 
+    val fizmnogVishs: String by lazy {
+        intent.extras?.get("fizmnogVishs").toString()
+    }
+
     val fizhavs: String by lazy {
         intent.extras?.get("fizhavs").toString()
     }
@@ -96,12 +103,11 @@ class Finish : AppCompatActivity() {
     private lateinit var textView2: TextView
     private lateinit var button: Button
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
         database = Room.databaseBuilder(
-            applicationContext, WaterDataBase::class.java, "To_Do"
+            applicationContext, WaterDataBase::class.java, "Water"
         ).build()
         sessionManager = SessionManager(this)
 
@@ -155,16 +161,25 @@ class Finish : AppCompatActivity() {
             //
 
         }
+
+
+
         button = findViewById(R.id.button19)
         button.setOnClickListener() {
             //sessionManager.paycheckNumber = textView.text.toString()
             // Log.e("TAG", "PAYCHECK:" + sessionManager.paycheckNumber)
             //DataObject.(id, create_title.text.toString())
-            val title = textView9.text.toString() + "смн"
-            DataObject.setData(title = title)
+            val title = textView9.text.toString() + "смн" + " "
+            val date = SimpleDateFormat(
+                "dd.MM.yyyy HH:mm:ss",
+                Locale.getDefault()
+            ).format(Date())
+            DataObject.setData(title = title, date = date)
+
             CoroutineScope(Dispatchers.IO).launch {
                 database.waterDao().insertTask(
-                    Water(title = title)
+                    Water(title = title, date = date)
+
                 )
             }
 
@@ -270,6 +285,10 @@ class Finish : AppCompatActivity() {
 
         if (intent.extras?.get("fizmnogs").toString() != "null") {
             textView2.text = fizmnogs
+        }
+
+        if (intent.extras?.get("fizmnogVishs").toString() != "null") {
+            textView2.text = fizmnogVishs
         }
 
 

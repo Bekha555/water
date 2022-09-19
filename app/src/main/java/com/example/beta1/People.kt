@@ -57,17 +57,23 @@ class People : AppCompatActivity() {
 
             editText = findViewById(R.id.editText1)
             val peopNumber = editText.text.toString()
-            val sumpeop = ((peopNumber).toInt() *  8.41).toString()
-            val intent = android.content.Intent(this, Finish::class.java)
-            intent.putExtra("ExtraP", sumpeop)
-            intent.putExtra("gosNeBudmnogbez", gosNeBudmnogbez)
-            intent.putExtra("gosNeBudmnogvishbez", gosNeBudmnogvishbez)
-            intent.putExtra("yourmnogbez",yourmnogbez)
-            intent.putExtra("yurmnogVishBez",yurmnogVishBez)
-            intent.putExtra("fizmnogbez",fizmnogbez)
-            intent.putExtra("fizmnogVishBez",fizmnogVishBez)
-            startActivity(intent)
+            if (peopNumber.trim().isNotEmpty()) {
+                val sumpeop = ((peopNumber).toInt() * 8.41).toString()
+                val intent = android.content.Intent(this, Finish::class.java)
+                intent.putExtra("ExtraP", sumpeop)
+                intent.putExtra("gosNeBudmnogbez", gosNeBudmnogbez)
+                intent.putExtra("gosNeBudmnogvishbez", gosNeBudmnogvishbez)
+                intent.putExtra("yourmnogbez", yourmnogbez)
+                intent.putExtra("yurmnogVishBez", yurmnogVishBez)
+                intent.putExtra("fizmnogbez", fizmnogbez)
+                intent.putExtra("fizmnogVishBez", fizmnogVishBez)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Поле не должно быть пустым", Toast.LENGTH_SHORT).show()
 
+                return@setOnClickListener
+
+            }
         }
     }
 }

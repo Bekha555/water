@@ -62,7 +62,7 @@
         android:layout_marginEnd="35dp"
         android:background="@drawable/input"
         android:ems="10"
-        android:maxLength="5"
+        android:maxLength="2"
         android:hint="Количество"
         android:inputType="number"
         android:textAlignment="center"
