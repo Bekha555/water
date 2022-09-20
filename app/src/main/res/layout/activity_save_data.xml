@@ -29,18 +29,19 @@
 
     <Button
         android:id="@+id/back_button"
-        android:layout_width="65dp"
-        android:layout_height="69dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="305dp"
-        android:background="@drawable/back_button"
+        android:background="@drawable/ic_back"
         android:stateListAnimator="@null"
-        android:text="←"
         android:textAlignment="center"
         android:textColor="@color/mainbg"
         android:textSize="45sp"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
@@ -62,20 +63,19 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle"
         android:layout_width="385dp"
-        android:layout_height="450dp"
+        android:layout_height="500sp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="100dp"
-        android:background="@drawable/blue_dotted"
+        android:background="#ffff"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953"
+        app:layout_constraintVertical_bias="1.0"
 
         tools:listitem="@layout/item_layout" />
 
