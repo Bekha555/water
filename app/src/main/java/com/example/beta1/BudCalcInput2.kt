@@ -49,12 +49,12 @@ class BudCalcInput2 : AppCompatActivity() {
             }
 
 
-            val intent = android.content.Intent(this, Finish::class.java)
-            intent.putExtra("BudExtraOne", sum2)
-            intent.putExtra("gosBud", gosBud)
+                val intent = android.content.Intent(this, Finish::class.java)
+                intent.putExtra("BudExtraOne", sum2)
+                intent.putExtra("gosBud", gosBud)
                 intent.putExtra("BudExtra", budmessage)
 
-            startActivity(intent)
+                startActivity(intent)
             }
             else{
                 Toast.makeText(this, "Поле не должно быть пустым", Toast.LENGTH_SHORT).show()
