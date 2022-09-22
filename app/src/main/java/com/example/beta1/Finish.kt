@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.beta1.utils.SessionManager
 import kotlinx.android.synthetic.main.activity_finish.*
-import kotlinx.android.synthetic.main.item_layout.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -98,6 +97,17 @@ class Finish : AppCompatActivity() {
         intent.extras?.get("fizmnogs").toString()
     }
 
+    //Water value get
+    val BudExtra: String by lazy {
+        intent.extras?.get("BudExtra").toString()
+    }
+    val message: String by lazy {
+        intent.extras?.get("Extra").toString()
+    }
+    val OOmessage: String by lazy {
+        intent.extras?.get("OOExtra").toString()
+    }
+
 
     private lateinit var textView: TextView
     private lateinit var textView2: TextView
@@ -153,14 +163,21 @@ class Finish : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.textView9)
         val textView2 = findViewById<TextView>(R.id.textView2)
 
-
         //Вычисления Благотворительная орг
         if (intent.getStringExtra("Extra").toString() != "null") {
             textView.text = sum2.toString()
-
-            //
-
         }
+
+        if (intent.getStringExtra("BudExtra").toString() != "null") {
+            value.text = BudExtra.toString()
+        }
+        if (intent.getStringExtra("Extra").toString() != "null") {
+            value.text = message.toString()
+        }
+        if (intent.getStringExtra("OOExtra").toString() != "null") {
+            value.text = OOmessage.toString()
+        }
+
 
 
 
@@ -169,22 +186,27 @@ class Finish : AppCompatActivity() {
             //sessionManager.paycheckNumber = textView.text.toString()
             // Log.e("TAG", "PAYCHECK:" + sessionManager.paycheckNumber)
             //DataObject.(id, create_title.text.toString())
+            val value = value.text.toString() + " " + "m³" + "воды"
             val title = textView9.text.toString() + "смн" + " "
             val date = SimpleDateFormat(
                 "dd.MM.yyyy HH:mm:ss",
                 Locale.getDefault()
             ).format(Date())
-            DataObject.setData(title = title, date = date)
+            val sections = textView2.text.toString()
+            DataObject.setData(title = title, date = date, sections = sections, value = value)
 
             CoroutineScope(Dispatchers.IO).launch {
                 database.waterDao().insertTask(
-                    Water(title = title, date = date)
+                    Water(title = title, date = date, sections = sections, water = value)
 
                 )
             }
 
             Toast.makeText(this, "Сохранено", Toast.LENGTH_SHORT).show()
         }
+
+        // Get Water Value
+
 
         //Вывод Обычное ОО
         if (intent.getStringExtra("OOExtraOne").toString() != "null") {

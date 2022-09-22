@@ -15,6 +15,8 @@ class rvAdapter(private val listofNames: List<Water>) :
     inner class ItemHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.saved_check
         val textView2: TextView = view.date
+        val textView3: TextView = view.sections
+        val textView4: TextView = view.water
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
@@ -26,6 +28,9 @@ class rvAdapter(private val listofNames: List<Water>) :
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         holder.textView.text = listofNames[position].title
         holder.textView2.text = listofNames[position].date
+        holder.textView3.text = listofNames[position].sections
+        holder.textView4.text = listofNames[position].water
+
     }
 
     override fun getItemCount(): Int {

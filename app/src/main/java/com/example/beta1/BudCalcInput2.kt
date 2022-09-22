@@ -51,7 +51,8 @@ class BudCalcInput2 : AppCompatActivity() {
 
             val intent = android.content.Intent(this, Finish::class.java)
             intent.putExtra("BudExtraOne", sum2)
-            intent.putExtra("gosBud",gosBud)
+            intent.putExtra("gosBud", gosBud)
+                intent.putExtra("BudExtra", budmessage)
 
             startActivity(intent)
             }
