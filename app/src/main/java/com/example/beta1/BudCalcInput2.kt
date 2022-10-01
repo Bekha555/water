@@ -32,7 +32,7 @@ class BudCalcInput2 : AppCompatActivity() {
 
 
             val budmessage = intent.getStringExtra("BudExtra").toString()
-
+            val budliter = budmessage + "" + "m³"
             editText = findViewById(R.id.budeditT)
             val budmessageOne = editText.text.toString()
             if (budmessageOne.trim().isNotEmpty()) {
@@ -52,7 +52,7 @@ class BudCalcInput2 : AppCompatActivity() {
                 val intent = android.content.Intent(this, Finish::class.java)
                 intent.putExtra("BudExtraOne", sum2)
                 intent.putExtra("gosBud", gosBud)
-                intent.putExtra("BudExtra", budmessage)
+                intent.putExtra("budliter", budliter)
 
                 startActivity(intent)
             }

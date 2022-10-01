@@ -26,7 +26,7 @@ class FizTypeOfHouse : AppCompatActivity() {
     val havBez: String = "Хавли без счётчика"
     fun startNewActivity9(view: View) {
         val intent = android.content.Intent(this, HavPeople::class.java)
-        val fizHavBez = ("${fizText} -> ${havBez}")
+        val fizHavBez = ("${fizText}   ${havBez}")
         intent.putExtra("fizHavBez",fizHavBez)
         startActivity(intent)
     }
@@ -34,7 +34,7 @@ class FizTypeOfHouse : AppCompatActivity() {
     val mnogBez: String = "Многоэтажки 1-5 этаж без счетчика"
     fun startNewActivity10(view: View) {
         val intent = android.content.Intent(this, People::class.java)
-        val fizmnogbez = ("${fizText} -> ${mnogBez}")
+        val fizmnogbez = ("${fizText}   ${mnogBez}")
         intent.putExtra("fizmnogbez",fizmnogbez)
         startActivity(intent)
     }
@@ -42,7 +42,7 @@ class FizTypeOfHouse : AppCompatActivity() {
     val mnogVishBez: String = "Многоэтажки высше 5 эт.  без счетчика"
     fun startNewActivity11(view: View) {
         val intent = android.content.Intent(this, People::class.java)
-        val fizmnogVishBez = ("${fizText} -> ${mnogVishBez}")
+        val fizmnogVishBez = ("${fizText}   ${mnogVishBez}")
         intent.putExtra("fizmnogVishBez",fizmnogVishBez)
         startActivity(intent)
     }
@@ -50,7 +50,7 @@ class FizTypeOfHouse : AppCompatActivity() {
     val havs: String = "Хавли с счетчиком"
     fun startNewActivity12(view: View) {
         val intent = android.content.Intent(this, CalcInput::class.java)
-        val fizhavs = ("${fizText} -> ${havs}")
+        val fizhavs = ("${fizText}   ${havs}")
         intent.putExtra("fizhavs",fizhavs)
         startActivity(intent)
     }
@@ -58,7 +58,7 @@ class FizTypeOfHouse : AppCompatActivity() {
     val mnogs: String = ("Многоэтажки 1-5 этаж с счетчиком")
     fun startNewActivity13(view: View) {
         val intent = android.content.Intent(this, CalcInput::class.java)
-        val fizmnogs = ("${fizText} -> ${mnogs}")
+        val fizmnogs = ("${fizText}   ${mnogs}")
         intent.putExtra("fizmnogs",fizmnogs)
         startActivity(intent)
     }
@@ -66,7 +66,7 @@ class FizTypeOfHouse : AppCompatActivity() {
     val mnogVishs: String = "Многоэтажки высше 5 эт.  с счетчиком"
     fun startNewActivity14(view: View) {
         val intent = android.content.Intent(this, CalcInput::class.java)
-        val fizmnogVishs = ("${fizText} -> ${mnogVishs}")
+        val fizmnogVishs = ("${fizText}   ${mnogVishs}")
         intent.putExtra("fizmnogVishs",fizmnogVishs)
         startActivity(intent)
     }

@@ -97,20 +97,28 @@ class Finish : AppCompatActivity() {
         intent.extras?.get("fizmnogs").toString()
     }
 
+
     //Water value get
-    val BudExtra: String by lazy {
-        intent.extras?.get("BudExtra").toString()
+    val budliter: String by lazy {
+        intent.extras?.get("budliter").toString()
     }
-    val message: String by lazy {
-        intent.extras?.get("Extra").toString()
+    val messageliter: String by lazy {
+        intent.extras?.get("messageliter").toString()
     }
-    val OOmessage: String by lazy {
-        intent.extras?.get("OOExtra").toString()
+    val OOliter: String by lazy {
+        intent.extras?.get("OOliter").toString()
+    }
+    val count: String by lazy {
+        intent.extras?.get("count").toString()
+    }
+    val count2: String by lazy {
+        intent.extras?.get("count2").toString()
     }
 
 
     private lateinit var textView: TextView
     private lateinit var textView2: TextView
+    private lateinit var textView3: TextView
     private lateinit var button: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -162,20 +170,28 @@ class Finish : AppCompatActivity() {
 
         val textView = findViewById<TextView>(R.id.textView9)
         val textView2 = findViewById<TextView>(R.id.textView2)
+        val textView3 = findViewById<TextView>(R.id.value)
 
         //Вычисления Благотворительная орг
         if (intent.getStringExtra("Extra").toString() != "null") {
             textView.text = sum2.toString()
         }
 
-        if (intent.getStringExtra("BudExtra").toString() != "null") {
-            value.text = BudExtra.toString()
+        if (intent.getStringExtra("budliter").toString() != "null") {
+            textView3.text = budliter.toString()
         }
-        if (intent.getStringExtra("Extra").toString() != "null") {
-            value.text = message.toString()
+        if (intent.getStringExtra("messageliter").toString() != "null") {
+            textView3.text = messageliter.toString()
         }
-        if (intent.getStringExtra("OOExtra").toString() != "null") {
-            value.text = OOmessage.toString()
+        if (intent.getStringExtra("OOliter").toString() != "null") {
+            textView3.text = OOliter.toString()
+        }
+
+        if (intent.getStringExtra("count").toString() != "null") {
+            textView3.text = count.toString()
+        }
+        if (intent.getStringExtra("count2").toString() != "null") {
+            textView3.text = count2.toString()
         }
 
 
@@ -186,7 +202,9 @@ class Finish : AppCompatActivity() {
             //sessionManager.paycheckNumber = textView.text.toString()
             // Log.e("TAG", "PAYCHECK:" + sessionManager.paycheckNumber)
             //DataObject.(id, create_title.text.toString())
-            val value = value.text.toString() + " " + "m³" + "воды"
+
+            val value = value.text.toString()
+
             val title = textView9.text.toString() + "смн" + " "
             val date = SimpleDateFormat(
                 "dd.MM.yyyy HH:mm:ss",

@@ -33,6 +33,7 @@ class OOCalcInput2 : AppCompatActivity() {
 
 
             val OOmessage = intent.getStringExtra("OOExtra").toString()
+            val OOliter = OOmessage + "" + "m³"
 
             editText = findViewById(R.id.ooeditT)
             val OOmessageOne = editText.text.toString()
@@ -49,12 +50,13 @@ class OOCalcInput2 : AppCompatActivity() {
             }
 
 
+                val intent = android.content.Intent(this, Finish::class.java)
+                intent.putExtra("OOExtraOne", sum2)
+                intent.putExtra("obshObOO", obshObOO)
 
+                intent.putExtra("OOliter", OOliter)
 
-            val intent = android.content.Intent(this, Finish::class.java)
-            intent.putExtra("OOExtraOne", sum2)
-            intent.putExtra("obshObOO", obshObOO)
-            startActivity(intent)
+                startActivity(intent)
             }
             else{
                 Toast.makeText(this, "Поле не должно быть пустым", Toast.LENGTH_SHORT).show()

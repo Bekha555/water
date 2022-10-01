@@ -30,7 +30,7 @@ class NeBudTypeOfHouse : AppCompatActivity() {
     val havBez: String = "Хавли без счётчика"
     fun startNewActivity20(view: View) {
         val intent = android.content.Intent(this, HavPeople::class.java)
-        val gosNeBudHavBez = ("${gosNeBud} -> ${havBez}")
+        val gosNeBudHavBez = ("${gosNeBud}   ${havBez}")
         intent.putExtra("gosNeBudHavBez", gosNeBudHavBez)
         startActivity(intent)
     }
@@ -39,7 +39,7 @@ class NeBudTypeOfHouse : AppCompatActivity() {
     val mnogbez: String = "Многоэтажки 1-5 этаж без счетчика"
     fun startNewActivity21(view: View) {
         val intent = android.content.Intent(this, People::class.java)
-        val gosNeBudmnogbez = ("${gosNeBud} -> ${mnogbez}")
+        val gosNeBudmnogbez = ("${gosNeBud}   ${mnogbez}")
         intent.putExtra("gosNeBudmnogbez", gosNeBudmnogbez)
         startActivity(intent)
     }
@@ -47,7 +47,7 @@ class NeBudTypeOfHouse : AppCompatActivity() {
                 //Многоэтажки высше 5 эт.  без счетчика
       val mnogvishbez: String = "Многоэтажки высше 5 эт. без счетчика"
     fun startNewActivity22(view: View) {
-        val gosNeBudmnogvishbez = ("${gosNeBud} -> ${mnogvishbez}")
+        val gosNeBudmnogvishbez = ("${gosNeBud}   ${mnogvishbez}")
         val intent = android.content.Intent(this, People::class.java)
         intent.putExtra("gosNeBudmnogvishbez", gosNeBudmnogvishbez)
         startActivity(intent)
@@ -57,7 +57,7 @@ class NeBudTypeOfHouse : AppCompatActivity() {
        val havs: String = "Хавли c счётчика"
     fun startNewActivity23(view: View) {
         val intent = android.content.Intent(this, CalcInput::class.java)
-         val gosNeBudHavs = ("${gosNeBud} -> ${havs}")
+        val gosNeBudHavs = ("${gosNeBud}   ${havs}")
         intent.putExtra("gosNeBudHavs", gosNeBudHavs)
         startActivity(intent)
     }
@@ -66,7 +66,7 @@ class NeBudTypeOfHouse : AppCompatActivity() {
        val mnogs: String = "Многоэтажки 1-5 этаж с счетчиком"
     fun startNewActivity24(view: View) {
         val intent = android.content.Intent(this, CalcInput::class.java)
-        val gosNeBudmnogs = ("${gosNeBud} -> ${mnogs}")
+        val gosNeBudmnogs = ("${gosNeBud}   ${mnogs}")
         intent.putExtra("gosNeBudmnogs", gosNeBudmnogs)
         startActivity(intent)
     }
@@ -75,7 +75,7 @@ class NeBudTypeOfHouse : AppCompatActivity() {
     val mnogvishs: String = "Многоэтажки высше 5 эт.  с счетчиком"
     fun startNewActivity25(view: View) {
         val intent = android.content.Intent(this, CalcInput::class.java)
-        val gosNeBudmnogvishs = ("${gosNeBud} -> ${mnogvishs}")
+        val gosNeBudmnogvishs = ("${gosNeBud}   ${mnogvishs}")
         intent.putExtra("gosNeBudmnogvishs", gosNeBudmnogvishs)
         startActivity(intent)
     }

@@ -46,7 +46,7 @@ class OOCalcInput : AppCompatActivity() {
 
                 val intent = android.content.Intent(this, OOCalcInput2::class.java)
                 intent.putExtra("OOExtra", OOmessage)
-                val obshObOO = ("${obshText} -> ${obOO}")
+                val obshObOO = ("${obshText}   ${obOO}")
                 intent.putExtra("obshObOO", obshObOO)
                 startActivity(intent)
             }

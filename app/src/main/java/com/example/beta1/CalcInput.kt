@@ -47,7 +47,7 @@ class CalcInput : AppCompatActivity() {
         val blagoText: String by lazy {
             intent.extras?.get("blagoText").toString()
         }
-        val obshBlago = ("${obshText} -> ${blagoText}")
+        val obshBlago = ("${obshText}  ${blagoText}")
 
         val gosNeBudHavs: String by lazy {
             intent.extras?.get("gosNeBudHavs").toString()
@@ -114,10 +114,5 @@ button.setOnClickListener(View.OnClickListener {
 
 
 }
-
-
-
-
-
 
 }

@@ -61,7 +61,7 @@ class CalcInput2 : AppCompatActivity() {
 
 
             val message = intent.getStringExtra("Extra").toString()
-
+            val messageliter = message + "" + "m³"
             //   Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
             editText = findViewById(R.id.editTextNumber3)
@@ -84,17 +84,19 @@ class CalcInput2 : AppCompatActivity() {
             val intent = android.content.Intent(this, Finish::class.java)
             intent.putExtra("Extra", sum2)
             intent.putExtra("obshBlago", obshBlago)
-            intent.putExtra("gosNeBudHavs", gosNeBudHavs)
-            intent.putExtra("gosNeBudmnogs", gosNeBudmnogs)
-            intent.putExtra("gosNeBudmnogvishs", gosNeBudmnogvishs)
-            intent.putExtra("yurhavs", yurhavs)
-            intent.putExtra("yurmnogs", yurmnogs)
-            intent.putExtra("yurmnogVishs", yurmnogVishs)
-            intent.putExtra("fizhavs", fizhavs)
-            intent.putExtra("fizmnogs", fizmnogs)
-            intent.putExtra("fizmnogVishs", fizmnogVishs)
+                intent.putExtra("gosNeBudHavs", gosNeBudHavs)
+                intent.putExtra("gosNeBudmnogs", gosNeBudmnogs)
+                intent.putExtra("gosNeBudmnogvishs", gosNeBudmnogvishs)
+                intent.putExtra("yurhavs", yurhavs)
+                intent.putExtra("yurmnogs", yurmnogs)
+                intent.putExtra("yurmnogVishs", yurmnogVishs)
+                intent.putExtra("fizhavs", fizhavs)
+                intent.putExtra("fizmnogs", fizmnogs)
+                intent.putExtra("fizmnogVishs", fizmnogVishs)
 
-            startActivity(intent)
+                intent.putExtra("messageliter", messageliter)
+
+                startActivity(intent)
             }
             else {
                 Toast.makeText(this, "Поле не должно быть пустым", Toast.LENGTH_SHORT).show()

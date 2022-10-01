@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.room.Room
 import com.example.beta1.utils.SessionManager
 import kotlinx.android.synthetic.main.activity_save_data.*
@@ -39,14 +41,32 @@ class SaveData : AppCompatActivity() {
         }
 
 
-
         clearButton.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-
-                database.waterDao().clearData()
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Очистить все чеки?")
+            builder.setMessage("Вы больше не сможите восстановить их!")
+            builder.setNegativeButton("Нет") { dialog, i ->
 
             }
+            builder.setPositiveButton("Да") { dialog, i ->
+                CoroutineScope(Dispatchers.IO).launch {
+
+                    database.waterDao().clearData()
+
+                }
+            }
+            builder.show()
         }
+
+
+//        clearButton.setOnClickListener {
+//            CoroutineScope(Dispatchers.IO).launch {
+//
+//                database.waterDao().clearData()
+//
+//            }
+//        }
+
 
         //sessionManager = SessionManager(this)
 

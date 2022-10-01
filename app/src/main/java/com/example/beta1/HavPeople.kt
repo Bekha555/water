@@ -42,6 +42,7 @@ class HavPeople : AppCompatActivity() {
 
             editText = findViewById(R.id.havEditText)
             val havNumber = editText.text.toString()
+            val count = havNumber + "" + "чел..."
             if (havNumber.trim().isNotEmpty()) {
                 val havpeop = ((havNumber).toInt() * 4.94).toString()
                 val intent = android.content.Intent(this, Finish::class.java)
@@ -49,6 +50,7 @@ class HavPeople : AppCompatActivity() {
                 intent.putExtra("gosNeBudHavBez", gosNeBudHavBez)
                 intent.putExtra("yurHavBez", yurHavBez)
                 intent.putExtra("fizHavBez", fizHavBez)
+                intent.putExtra("count", count)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Поле не должно быть пустым", Toast.LENGTH_SHORT).show()

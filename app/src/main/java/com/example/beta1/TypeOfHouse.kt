@@ -28,7 +28,7 @@ private lateinit var button: Button
         val havBez: String = "Хавли без счётчика"
         fun startNewActivity9(view: View) {
             val intent = android.content.Intent(this, HavPeople::class.java)
-            val yurHavBez = ("${yurText} -> ${havBez}")
+            val yurHavBez = ("${yurText}   ${havBez}")
             intent.putExtra("yurHavBez",yurHavBez)
             startActivity(intent)
         }
@@ -36,7 +36,7 @@ private lateinit var button: Button
     val mnogBez: String = "Многоэтажки 1-5 этаж без счетчика"
         fun startNewActivity10(view: View) {
             val intent = android.content.Intent(this, People::class.java)
-            val yourmnogbez = ("${yurText} -> ${mnogBez}")
+            val yourmnogbez = ("${yurText}   ${mnogBez}")
             intent.putExtra("yourmnogbez",yourmnogbez)
             startActivity(intent)
         }
@@ -44,7 +44,7 @@ private lateinit var button: Button
     val mnogVishBez: String = "Многоэтажки высше 5 эт.  без счетчика"
         fun startNewActivity11(view: View) {
             val intent = android.content.Intent(this, People::class.java)
-            val yurmnogVishBez = ("${yurText} -> ${mnogVishBez}")
+            val yurmnogVishBez = ("${yurText}   ${mnogVishBez}")
             intent.putExtra("yurmnogVishBez",yurmnogVishBez)
             startActivity(intent)
         }
@@ -52,7 +52,7 @@ private lateinit var button: Button
     val havs: String = "Хавли с счетчиком"
         fun startNewActivity12(view: View) {
             val intent = android.content.Intent(this, CalcInput::class.java)
-            val yurhavs = ("${yurText} -> ${havs}")
+            val yurhavs = ("${yurText}   ${havs}")
             intent.putExtra("yurhavs",yurhavs)
             startActivity(intent)
         }
@@ -60,7 +60,7 @@ private lateinit var button: Button
     val mnogs: String = ("Многоэтажки 1-5 этаж с счетчиком")
         fun startNewActivity13(view: View) {
             val intent = android.content.Intent(this, CalcInput::class.java)
-            val yurmnogs = ("${yurText} -> ${mnogs}")
+            val yurmnogs = ("${yurText}   ${mnogs}")
             intent.putExtra("yurmnogs",yurmnogs)
             startActivity(intent)
         }
@@ -68,7 +68,7 @@ private lateinit var button: Button
     val mnogVishs: String = "Многоэтажки высше 5 эт.  с счетчиком"
         fun startNewActivity14(view: View) {
             val intent = android.content.Intent(this, CalcInput::class.java)
-            val yurmnogVishs = ("${yurText} -> ${mnogVishs}")
+            val yurmnogVishs = ("${yurText}   ${mnogVishs}")
             intent.putExtra("yurmnogVishs",yurmnogVishs)
             startActivity(intent)
         }

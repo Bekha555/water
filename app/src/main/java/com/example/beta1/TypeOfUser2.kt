@@ -28,7 +28,7 @@ class TypeOfUser2 : AppCompatActivity() {
     val budText: String = "Бьюджетная Организация"
     fun startNewActivity7(view: View) {
         val intent = android.content.Intent(this, BudCalcInput::class.java)
-        val gosBud = ("${gosText} -> ${budText}")
+        val gosBud = ("${gosText}   ${budText}")
         intent.putExtra("gosBud",gosBud)
         startActivity(intent)
     }
@@ -40,7 +40,7 @@ class TypeOfUser2 : AppCompatActivity() {
     val nebud: String = "Не Бьюджетная Организация"
     fun startNewActivity8(view: View) {
         val intent = android.content.Intent(this, NeBudTypeOfHouse::class.java)
-        val gosNeBud = ("${gosText} -> ${nebud}")
+        val gosNeBud = ("${gosText}   ${nebud}")
         intent.putExtra("gosNeBud",gosNeBud)
         startActivity(intent)
 

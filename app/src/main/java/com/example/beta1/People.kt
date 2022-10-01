@@ -57,6 +57,7 @@ class People : AppCompatActivity() {
 
             editText = findViewById(R.id.editText1)
             val peopNumber = editText.text.toString()
+            val count2 = peopNumber + "" + "чел..."
             if (peopNumber.trim().isNotEmpty()) {
                 val sumpeop = ((peopNumber).toInt() * 8.41).toString()
                 val intent = android.content.Intent(this, Finish::class.java)
@@ -67,6 +68,7 @@ class People : AppCompatActivity() {
                 intent.putExtra("yurmnogVishBez", yurmnogVishBez)
                 intent.putExtra("fizmnogbez", fizmnogbez)
                 intent.putExtra("fizmnogVishBez", fizmnogVishBez)
+                intent.putExtra("count2", count2)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Поле не должно быть пустым", Toast.LENGTH_SHORT).show()
